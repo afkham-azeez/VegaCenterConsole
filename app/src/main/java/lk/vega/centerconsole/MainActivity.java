@@ -1,5 +1,5 @@
 /*
- * (C) Copyright ${year} CodeGen International (http://codegen.net) and others.
+ * (C) Copyright 2015 CodeGen International (http://codegen.net) and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
