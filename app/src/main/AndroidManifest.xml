@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lk.vega.centerconsole" >
+
+    <uses-sdk />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/vega_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <!--android:theme="@style/AppTheme"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:clearTaskOnLaunch="true"-->
+        <!--android:stateNotNeeded="true"-->
+        <activity
+            android:name=".MainActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name">
+            <!--android:launchMode="singleTask">-->
+            <!--android:screenOrientation="nosensor" >-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- The following two intent-filters are the key to set homescreen -->
+                <!--<category android:name="android.intent.category.HOME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            </intent-filter>
+        </activity>
+        <!--<activity
+            android:name=".EnergyActivity"
+            android:label="@string/title_activity_energy"
+            android:parentActivityName=".HomeScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="lk.vega.centerconsole.HomeScreen" />
+        </activity>-->
+    </application>
+
+</manifest>

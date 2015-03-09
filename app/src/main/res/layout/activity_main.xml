@@ -1,0 +1,121 @@
+<!--
+     (C) Copyright ${year} CodeGen International (http://codegen.net) and others.
+
+     All rights reserved. This program and the accompanying materials
+     are made available under the terms of the GNU Lesser General Public License
+     (LGPL) version 2.1 which accompanies this distribution, and is available at
+     http://www.gnu.org/licenses/lgpl-2.1.html
+
+     This library is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+     Lesser General Public License for more details.
+
+     Contributors:
+         Afkham Azeez (afkham@gmail.com)
+
+-->
+<LinearLayout
+    android:id="@+id/vega"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.16">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/energyButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/energy"
+                android:onClick="clickEnergy"
+                android:padding="0dp"/>
+
+            <ImageButton
+                android:id="@+id/lightsButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lights"
+                android:onClick="clickLights"
+                android:padding="0dp"/>
+
+
+            <ImageButton
+                android:id="@+id/cameraButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/camera"
+                android:onClick="clickCamera"
+                android:padding="0dp"/>
+
+
+            <ImageButton
+                android:id="@+id/brakesButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/brake"
+                android:onClick="clickBrakes"
+                android:padding="0dp"/>
+
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ac"
+                android:onClick="clickAC"
+                android:padding="0dp"/>
+
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/player"
+                android:onClick="clickPlayer"
+                android:padding="0dp"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:orientation="vertical"/>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.16">
+
+        <LinearLayout
+            android:id="@+id/extApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
