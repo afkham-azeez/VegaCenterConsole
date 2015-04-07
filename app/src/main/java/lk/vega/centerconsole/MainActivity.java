@@ -16,15 +16,22 @@
  */
 package lk.vega.centerconsole;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
+import android.widget.Space;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,39 +39,69 @@ import java.util.List;
 import lk.vega.centerconsole.fragments.EnergyDisplayFragment;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
-    List<AppInfo> res;
+    private List<AppInfo> res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set the apps at the bottom
+        /*// Set the apps at the bottom
         LinearLayout extApp = (LinearLayout) findViewById(R.id.extApp);
         getAppList();
         for (int i = 0; i < res.size(); i++) {
             AppInfo app = res.get(i);
-            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT);
-            ImageButton myButton = new ImageButton(this);
-            myButton.setImageDrawable(app.icon);
-            myButton.setOnClickListener(this);
-            myButton.setTag(i);
-            extApp.addView(myButton, lp);
-        }
+            ViewGroup.LayoutParams lp =
+                    new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            ImageButton appButton = new ImageButton(this);
+//            appButton.setImageDrawable(app.icon);
+            appButton.setBackground(app.icon);
+            appButton.setPadding(0, 0, 0, 0);
+            appButton.setOnClickListener(this);
+            appButton.setTag(i);
+            extApp.addView(appButton, lp);
+
+            Space space = new Space(this);
+            int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15, getResources().getDisplayMetrics());
+            extApp.addView(space, new ViewGroup.LayoutParams(px, ViewGroup.LayoutParams.MATCH_PARENT));
+        }*/
+
+        // Bottom
+       /* SeekBar seekBar = (SeekBar) findViewById(R.id.acSeekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            TextView textView = (TextView) findViewById(R.id.acSeekBarText);
+            int progress = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
+                progress = progressValue;
+//                Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+//                Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                textView.setText("Temperature: " + progress + "/" + seekBar.getMax());
+//                Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
+            }
+        });*/
     }
 
     public void getAppList() {
         List<PackageInfo> apps = getPackageManager().getInstalledPackages(0);
-        res = new ArrayList<AppInfo>();
+        res = new ArrayList<>();
         for (int i = 0; i < apps.size(); i++) {
             PackageInfo p = apps.get(i);
             if ((p.packageName.contains("lk.vega") && !p.packageName.equals("lk.vega.centerconsole"))
                     || p.packageName.contains("maps") || p.packageName.contains("phone")) {
                 System.out.println("+++ package=" + p.packageName);
                 AppInfo newInfo = new AppInfo();
-                newInfo.appname = p.applicationInfo.loadLabel(getPackageManager()).toString();
-                newInfo.pname = p.packageName;
+                newInfo.appName = p.applicationInfo.loadLabel(getPackageManager()).toString();
+                newInfo.packageName = p.packageName;
                 newInfo.versionName = p.versionName;
                 newInfo.versionCode = p.versionCode;
                 newInfo.icon = p.applicationInfo.loadIcon(getPackageManager());
@@ -75,35 +112,27 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-
-        /*int i = (int) v.getTag();
-
+        int i = (int) v.getTag();
         AppInfo app = res.get(i);
         PackageManager pm = this.getPackageManager();
-        Intent it = pm.getLaunchIntentForPackage(app.pname);
-
-        if (null != it)
-            this.startActivity(it);*/
-
+        Intent it = pm.getLaunchIntentForPackage(app.packageName);
+        if (null != it) {
+            this.startActivity(it);
+        }
     }
 
-
-    class AppInfo {
-        String appname = "";
-        String pname = "";
+    private static class AppInfo {
+        String appName = "";
+        String packageName = "";
         String versionName = "";
         int versionCode = 0;
         Drawable icon;
-
     }
 
     public void clickEnergy(View v) {
-//        LinearLayout i = (LinearLayout) findViewById(R.id.lights);
-//        i.setVisibility(View.VISIBLE);
-
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container, new EnergyDisplayFragment()).commit();
+//        fragmentManager.beginTransaction().replace(R.id.container, new EnergyDisplayFragment()).commit();
     }
 
     public void clickLights(View view) {

@@ -23,99 +23,288 @@
     android:orientation="vertical"
     android:theme="@style/AppTheme">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.16">
+        android:layout_weight="0.25">
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/energyButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/energy"
-                android:onClick="clickEnergy"
-                android:padding="0dp"/>
-
-            <ImageButton
-                android:id="@+id/lightsButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/lights"
-                android:onClick="clickLights"
-                android:padding="0dp"/>
-
-
-            <ImageButton
-                android:id="@+id/cameraButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/camera"
-                android:onClick="clickCamera"
-                android:padding="0dp"/>
-
-
-            <ImageButton
-                android:id="@+id/brakesButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/brake"
-                android:onClick="clickBrakes"
-                android:padding="0dp"/>
-
-
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/ac"
-                android:onClick="clickAC"
-                android:padding="0dp"/>
-
-
-            <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/player"
-                android:onClick="clickPlayer"
-                android:padding="0dp"/>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="20"
-        android:orientation="vertical"/>
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.16">
 
         <LinearLayout
             android:id="@+id/extApp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/energyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="@drawable/ac_vents"
+                android:onClick="clickEnergy"
+                android:padding="10dp"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/lightsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="@drawable/ac_direct"
+                android:onClick="clickLights"
+                android:padding="10dp"/>
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/cameraButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="@drawable/ac_heater"
+                android:onClick="clickCamera"
+                android:padding="10dp"
+                />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/brakesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="@drawable/ac_chill"
+                android:onClick="clickBrakes"
+                android:padding="10dp"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/lightsButtonDDDDD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/bluetooth"
+            android:onClick="clickLights"
+            android:padding="10dp"/>
+
+        <Space
+            android:layout_width="440dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/cameraButtonDDDDD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/hazard"
+            android:onClick="clickCamera"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/lightsButton3333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/settings"
+            android:onClick="clickLights"
+            android:padding="10dp"/>
+
+        <Space
+            android:layout_width="440dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/cameraButton3333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/music"
+            android:onClick="clickCamera"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/lightsButton4444"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/call"
+            android:onClick="clickLights"
+            android:padding="10dp"/>
+
+        <Space
+            android:layout_width="440dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/cameraButton4444"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/web"
+            android:onClick="clickCamera"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/lightsButton6666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/map"
+            android:onClick="clickLights"
+            android:padding="10dp"/>
+
+        <Space
+            android:layout_width="440dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/cameraButton6666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:background="@drawable/voice"
+            android:onClick="clickCamera"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <!--<FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:orientation="vertical"/>-->
+
+    <!--LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/energyButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/energy"
+            android:onClick="clickEnergy"
+            android:padding="0dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <SeekBar
+                android:id="@+id/acSeekBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="600dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dip"
+                android:layout_marginTop="12dip"
+                android:max="200"
+                android:maxHeight="9dp"
+                android:minHeight="9dp"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/shine_btn"/>
+
+            <TextView
+                android:id="@+id/acSeekBarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/acSeekBar"
+                android:layout_marginLeft="29dp"
+                android:layout_marginTop="14dp"/>
+        </RelativeLayout>
+    </LinearLayout-->
 
 </LinearLayout>

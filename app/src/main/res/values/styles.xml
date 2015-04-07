@@ -28,7 +28,7 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
-        <!--<item name="android:windowBackground">@drawable/vega_logo</item>-->
+        <item name="android:windowBackground">@drawable/vega_bg</item>
     </style>
 
     <!-- Application theme. -->
