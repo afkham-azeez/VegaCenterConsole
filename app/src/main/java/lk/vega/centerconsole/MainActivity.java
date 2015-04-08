@@ -16,29 +16,18 @@
  */
 package lk.vega.centerconsole;
 
-import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.SeekBar;
-import android.widget.Space;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import lk.vega.centerconsole.fragments.EnergyDisplayFragment;
-
-public class MainActivity extends FragmentActivity implements View.OnClickListener {
+public class MainActivity extends FragmentActivity implements View.OnClickListener, View.OnLongClickListener {
     private List<AppInfo> res;
 
     @Override
@@ -89,6 +78,22 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 //                Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
             }
         });*/
+
+        setButtonConfigurations(findViewById(R.id.bluetoothBtn), R.drawable.bluetooth_button_style);
+        setButtonConfigurations(findViewById(R.id.hazardBtn), R.drawable.hazard_button_style);
+        setButtonConfigurations(findViewById(R.id.settingsBtn), R.drawable.settings_button_style);
+        setButtonConfigurations(findViewById(R.id.musicBtn), R.drawable.music_button_style);
+        setButtonConfigurations(findViewById(R.id.callBtn), R.drawable.call_button_style);
+        setButtonConfigurations(findViewById(R.id.webBtn), R.drawable.web_button_style);
+        setButtonConfigurations(findViewById(R.id.mapBtn), R.drawable.map_button_style);
+        setButtonConfigurations(findViewById(R.id.voiceBtn), R.drawable.voice_button_style);
+
+    }
+
+    private void setButtonConfigurations(View v, int resId) {
+        v.setOnLongClickListener(this);
+        v.setBackgroundResource(resId);
+        v.setOnClickListener(this);
     }
 
     public void getAppList() {
@@ -112,13 +117,20 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        int i = (int) v.getTag();
+        /*int i = (int) v.getTag();
         AppInfo app = res.get(i);
         PackageManager pm = this.getPackageManager();
         Intent it = pm.getLaunchIntentForPackage(app.packageName);
         if (null != it) {
             this.startActivity(it);
-        }
+        }*/
+        Toast.makeText(getApplicationContext(), "Button clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        // TODO Return to home view
+        return false;
     }
 
     private static class AppInfo {

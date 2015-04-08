@@ -115,7 +115,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/lightsButtonDDDDD"
+            android:id="@+id/bluetoothBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -128,7 +128,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/cameraButtonDDDDD"
+            android:id="@+id/hazardBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -154,7 +154,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/lightsButton3333"
+            android:id="@+id/settingsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -167,7 +167,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/cameraButton3333"
+            android:id="@+id/musicBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -193,7 +193,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/lightsButton4444"
+            android:id="@+id/callBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -206,7 +206,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/cameraButton4444"
+            android:id="@+id/webBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -232,7 +232,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/lightsButton6666"
+            android:id="@+id/mapBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -245,7 +245,7 @@
             android:layout_height="match_parent"/>
 
         <ImageButton
-            android:id="@+id/cameraButton6666"
+            android:id="@+id/voiceBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
